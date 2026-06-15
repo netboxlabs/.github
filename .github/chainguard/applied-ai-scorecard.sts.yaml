@@ -1,0 +1,11 @@
+# Org-level Octo STS policy: applied-ai's weekly refresh-scorecard workflow
+# reads every netboxlabs repo to compute AI-readiness scorecards.
+# repositories: omitted on purpose - the token may read all installation
+# repos, but only this exact workflow can mint it (claim_pattern), and it
+# is read-only.
+issuer: https://token.actions.githubusercontent.com
+subject: repo:netboxlabs/applied-ai:ref:refs/heads/main
+claim_pattern:
+  workflow_ref: 'netboxlabs/applied-ai/\.github/workflows/refresh-scorecard\.yml@refs/heads/main'
+permissions:
+  contents: read
