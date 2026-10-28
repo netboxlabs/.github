@@ -1,0 +1,11 @@
+# Org-level Octo STS policy: applied-ai's repo-metadata onboarding workflow
+# opens and refreshes one catalog-info.yaml PR per private repo.
+# repositories: omitted on purpose, as for applied-ai-scorecard. Only this
+# exact workflow on main can mint it. The job skips public repos.
+issuer: https://token.actions.githubusercontent.com
+subject: repo:netboxlabs/applied-ai:ref:refs/heads/main
+claim_pattern:
+  workflow_ref: 'netboxlabs/applied-ai/\.github/workflows/repo-metadata-onboarding\.yml@refs/heads/main'
+permissions:
+  contents: write
+  pull_requests: write
